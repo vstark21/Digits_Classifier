@@ -1,12 +1,11 @@
 import cv2
 import numpy as np
 from model_utils import *
-from matplotlib import pyplot as plt
 
 def get_boundary_points(frame):
 
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    _, frame = cv2.threshold(frame, 60, 255, cv2.THRESH_BINARY_INV)
+    _, frame = cv2.threshold(frame, 50, 255, cv2.THRESH_BINARY_INV)
 
     kernel = np.ones((5, 5), dtype=int)
 
@@ -50,7 +49,8 @@ def draw_bounding_boxes(boxes, predictions, img):
 
     for (x, y, w, h), p in zip(boxes, predictions):
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        cv2.putText(img, str(p), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
-    
+        cv2.putText(img, str(p), (x + w, y + h), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+        print(p)
+
     return img
 
