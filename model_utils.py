@@ -4,6 +4,7 @@ import numpy as np
 def build_model():
     
     files = os.listdir()
+
     if "mnist_model.h5" not in files:
     
         from sklearn.model_selection import train_test_split
@@ -14,8 +15,6 @@ def build_model():
         import pandas as pd
 
         (feat_tkeras, lab_tkeras), (feat_val, lab_val) = mnist.load_data()
-
-        feat_tkeras.shape, lab_tkeras.shape, feat_val.shape, lab_val.shape
 
         train_data = pd.read_csv("train.csv")
 
@@ -57,5 +56,13 @@ def build_model():
 
 def predict(mnist_model, images):
 
-    return np.argmax(mnist_model.predict(images), axis=1)
+    predictions = mnist_model.predict(images)
 
+    actual_predictions = np.argmax(predictions, axis=1)
+
+    pred_probs = {}
+
+    for i, el in enumerate(actual_predictions):
+        pred_probs[el] = int(predictions[i][el] * 100)
+    
+    return pred_probs
