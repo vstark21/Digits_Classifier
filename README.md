@@ -11,9 +11,10 @@ The two modules it contains are:
 
 ## What it does
 
-<a href="https://github.com/vstark21/Digits_Detection/blob/master/images/test.jpeg"><img src="images/test.jpeg" width=30% style="margin:5%;"></a>
-<a href="https://github.com/vstark21/Digits_Detection/blob/master/images/result.jpg"><img src="images/result.jpg" width=30% style="float:right;margin:5%;"></a>
-
+<div align="center">
+<a href="https://github.com/vstark21/Digits_Detection/blob/master/images/test.jpeg"><img src="images/test.jpeg" width=30% style="margin-top:5%;margin-bottom:5%;margin-right:2.5%;"></a>
+<a href="https://github.com/vstark21/Digits_Detection/blob/master/images/result.jpg"><img src="images/result.jpg" width=30% style="margin-top:5%;margin-bottom:5%;margin-left:2.5%;"></a>
+</div>
 
 ## Explanation
 
