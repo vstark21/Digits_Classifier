@@ -4,6 +4,7 @@
 import os
 import numpy as np
 
+# This function builds a CNN model.
 def build_model():
     
     files = os.listdir()
@@ -57,6 +58,7 @@ def build_model():
 
     return mnist_model
 
+# This function predicts digits in given images.
 def predict(mnist_model, images):
 
     predictions = mnist_model.predict(images)

@@ -5,17 +5,8 @@ import cv2
 import numpy as np
 from model_utils import *
 
-def IOU(arr1, arr2):
 
-    x, y, w, h = arr1
-    x1, y1, w1, h1 = arr2
-
-    intersection_area = abs(max(x1, x) - min(x+w, x1+w1)) * abs(max(y, y1) - min(y+h, y1+h1))
-    union_area = h * w + h1 * w1 - intersection_area
-
-    return intersection_area / union_area
-
-
+# This function takes in a frame or a picture and returns the boundary points of digits in frame.
 def get_boundary_points(frame):
 
     print(frame.shape)
@@ -48,6 +39,7 @@ def get_boundary_points(frame):
     return boxes, frame
 
 
+# This function takes in boxes returned by first function and frame and returns resized images so that CNN model can predict digits in it.
 def get_resized_images(boxes, frame, percent=0.1):
     
     images = []
@@ -62,6 +54,7 @@ def get_resized_images(boxes, frame, percent=0.1):
     return np.array(images)
 
 
+# This function draws bounding boxes as we saw in the prediction results.
 def draw_bounding_boxes(boxes, predictions, img):
 
     for (x, y, w, h), p in zip(boxes, predictions.keys()):
