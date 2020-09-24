@@ -35,4 +35,4 @@ How it actually works is:
 
 - Then resizes the image and predicts using pre-trained model( <code>mnist_model.h5</code> ) if available or else trains a new model.
 
-:copyright: <a href="https://github.com/vstark21"><small>V I S H W A S</small></a>
+ <div align="center">&copy <a href="https://github.com/vstark21"><small>V I S H W A S</small></a></div>
